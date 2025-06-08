@@ -1,0 +1,214 @@
+.header {
+  width: 100%;
+  color: white;
+  padding: 25px 10px;
+  position: absolute; // ← Cambiado de absolute a fixed
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent; // fondo transparente para desktop
+}
+
+/* Dropdown general */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  color: white;
+  text-decoration: none;
+  padding: 5px 40px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Menú oculto por defecto */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #0B1B14;
+  min-width: 260px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.548);
+  z-index: 1001;
+  flex-direction: column;
+  top: 100%;
+  left: 40px;
+}
+
+.dropdown-menu a {
+  padding: 14px 20px;
+  text-decoration: none;
+  display: block;
+  color: white;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: #133328;
+}
+
+/* Mostrar menú al pasar el mouse */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.logo-img {
+  width: 240px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  // Esto asegura que no se pegue al top
+  position: relative;
+  top: 0;
+  transition: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 40px;
+  cursor: pointer;
+}
+
+nav a.active {
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+}
+ .icon-desplegable{
+    font-size: 14px;
+    margin: 0 5px 0 0 ;
+  }
+/* Responsive */
+@media (max-width: 768px) {
+  .icon-desplegable{
+    font-size: 10px;
+    display: inline-block;
+    margin: 0 5px 0 0 ;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .logo-img {
+    width: 140px;
+    position: relative;
+    top: -5px;
+    left: -10px;
+  }
+
+  .bar-fix {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0B1B14;
+    flex-direction: column;
+    overflow: hidden;
+
+    padding: 30px 0;
+    // transición
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+    pointer-events: none;
+  }
+
+  nav.active {
+    max-height: 500px; // suficiente para mostrar los enlaces
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    position: relative;
+    top: -13px;
+  }
+
+  .header {
+    height: 80px;
+    background-color: #0C2219; // fondo fijo al hacer scroll en móviles
+  }
+
+  /* Ajustes para menú desplegable en móviles */
+.dropdown {
+  width: 100%;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+/* No usar hover en móviles: oculto por defecto */
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #0B1B14;
+  padding: 0;
+  margin: 10px 0 0 0 ;
+  position: static;
+  box-shadow: none;
+  min-width: unset;
+  left: 0;
+}
+
+/* Muestra al tener clase .open (controlado desde Angular) */
+.dropdown.open .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a {
+  padding: 15px 60px;
+  border-top: 1px solid #133328;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #133328;
+}
+}
