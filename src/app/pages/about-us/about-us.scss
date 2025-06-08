@@ -1,0 +1,566 @@
+.container-home {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-image:
+        linear-gradient(rgba(16, 37, 25, 0.705), rgba(11, 32, 25, 0.801)),
+        url('/images/nosotros.png');
+    background-size: cover;
+    /* que la imagen cubra todo */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* no repetir */
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    overflow: hidden;
+    padding: 2% 0;
+
+    .title-home {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+            text-align: center;
+            font-size: 55px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+        }
+    }
+}
+
+
+.quienes-somos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3% 0%;
+    background: linear-gradient(to right, #CFB17C 14%, white 14%);
+
+    .video-wrapper {
+        position: relative;
+        width: 25%;
+        margin: auto;
+        padding: 10px;
+        transform: translateX(-150px);
+
+        video {
+            width: 100%;
+            border: none;
+            box-shadow: none;
+        }
+
+        .custom-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+
+            i.fas {
+                font-size: 24px;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+
+            .pause-play-btn {
+                background: transparent;
+                border: none;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .time-info {
+                font-size: 12px;
+                min-width: 70px;
+            }
+
+            .progress-bar {
+                flex: 1;
+                appearance: none;
+                height: 4px;
+                background: #ddd;
+                border-radius: 2px;
+
+                &::-webkit-slider-thumb {
+                    appearance: none;
+                    width: 10px;
+                    height: 10px;
+                    background: #fff;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .texto-container {
+        width: 40%;
+        position: relative;
+        left: -260px;
+        margin: 1rem;
+        text-align: left;
+
+        .subtitulo {
+            color: #c2a75c;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .titulo {
+            font-size: 4rem;
+            font-weight: 600;
+            color: #3e463d;
+            margin: 0 0 1rem 0;
+            letter-spacing: 0.3rem;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 10px;
+        }
+
+        .descripcion {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .ref-button {
+            width: 100%;
+            margin-top: 40px;
+            text-align: center;
+
+            a {
+                background-color: #d5a86a;
+                color: #fff;
+                padding: 0.75rem 1.5rem;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: #ca9953
+                }
+            }
+        }
+
+    }
+}
+
+// Responsive para 1024px
+@media (max-width: 1024px) {
+    .quienes-somos-container {
+
+        padding: 2rem 2%;
+
+        .video-wrapper {
+            width: 35%;
+            margin-bottom: 2rem;
+        }
+
+        .texto-container {
+            width: 50%;
+            left: 0;
+            text-align: center;
+
+            .titulo {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+
+            .subtitulo {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+}
+
+.mision-vision-container {
+    background-image:
+        linear-gradient(rgba(16, 37, 25, 0.795), rgba(11, 32, 25, 0.904)),
+        url('/images/mision-vision-fondo.jpg');
+    background-size: cover;
+    /* que la imagen cubra todo */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    .card {
+        background-color: #d9b97e50;
+        color: white;
+        padding: 2rem 1.5rem;
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        text-align: left;
+        position: relative;
+
+        .icon {
+            font-size: 2.5rem;
+            color: #dbb76d;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #dbb76d;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    }
+
+}
+
+.estrategias-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+
+    .title {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+        color: #333;
+        font-weight: 500;
+        border-bottom: 2px solid #b79d68;
+        display: inline-block;
+        padding: 15px 16% 30px 16%;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .img-box {
+            flex: 1 1 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                display: block;
+            }
+        }
+
+        .text-box {
+            flex: 1 1 300px;
+
+            h3 {
+                font-size: 2.5rem;
+                letter-spacing: 9px;
+                color: #B8BFBC;
+                margin-bottom: 1rem;
+                font-weight: 700;
+                font-family: 'Playfair Display', serif;
+                font-weight: 800;
+
+            }
+
+            p {
+                color: #333;
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .item {
+            flex-direction: column !important;
+            text-align: center;
+        }
+    }
+}
+
+.team-section {
+    background-image:
+        linear-gradient(rgba(16, 37, 25, 0.774), rgba(11, 32, 25, 0.856)),
+        url('/images/team-fondo.jpg');
+    background-size: cover;
+    /* que la imagen cubra todo */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 3% 15%;
+    background-color: #0d2119;
+    text-align: center;
+
+    .section-title {
+        font-size: 2rem;
+        color: #c6b16f;
+        border-top: 2px solid #c6b16f;
+        display: inline-block;
+        padding-top: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Fuerza solo 3 columnas
+        gap: 2rem;
+        justify-items: center;
+
+        @media (max-width: 1440px) {
+            grid-template-columns: repeat(2, 1fr); // 2 columnas en 1024px
+            position: relative;
+        }
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr); // 2 columnas en 1024px
+            position: relative;
+            left: -50px;
+        }
+    }
+
+    .member-card {
+        width: 400px;
+        background: #f7f7f7;
+        border: 3px solid #dec79a;
+        border-radius: 5px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .info-abo {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            h3 {
+                font-size: 1.5rem;
+                margin: 0;
+                color: #2d2d2d;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 0.85rem;
+                color: #555;
+                margin-bottom: 0.5rem;
+            }
+
+            .linkedin-icon {
+                font-size: 2rem;
+                color: #0077b5;
+                position: relative;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+            border-radius: 3px 0px 0px 3px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container-home {
+        height: 35vh;
+        padding: 4% 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .title-home {
+            width: 90%;
+
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+                position: relative;
+                top: 40px;
+            }
+        }
+    }
+
+    .quienes-somos-container {
+        flex-direction: column;
+        padding: 0rem 1rem 1rem 1rem;
+        background: linear-gradient(to left, red 0%, white 0%);
+
+        .video-wrapper {
+            order: 1;
+            width: 80%;
+            transform: translateX(0px);
+
+        }
+
+        .texto-container {
+            width: 90%;
+            left: 0;
+            top: -25px;
+            text-align: center;
+
+            .titulo {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .subtitulo {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .ref-button {
+        width: 100%;
+
+        a {
+            width: 100%;
+            font-size: 13px;
+        }
+    }
+
+    .mision-vision-container {
+        padding: 2rem 1rem;
+        flex-direction: column;
+        align-items: center;
+
+        .card {
+            width: 100%;
+            padding: 1.5rem 1rem;
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .estrategias-container {
+        padding: 1rem;
+
+        .title {
+            font-size: 1.1rem;
+            padding: 10px;
+        }
+
+        .item {
+            flex-direction: column !important;
+            text-align: center;
+
+            .img-box {
+                flex: 1 1 100px;
+
+            }
+
+            .text-box h3 {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+
+            .text-box {
+                flex: 1 1 100px;
+
+                p {
+                    font-size: 0.9rem;
+
+                }
+            }
+
+        }
+    }
+
+    .team-section {
+        padding: 2rem 1rem;
+
+        .section-title {
+            font-size: 1.5rem;
+        }
+
+        .team-grid {
+            grid-template-columns: 1fr; // Solo 1 columna en móvil
+            gap: 1.5rem;
+            left: 0;
+        }
+
+        .member-card {
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+
+            .info-abo {
+                width: 100%;
+                margin: 20px 0;
+
+            }
+
+            img {
+                width: 100%;
+            }
+
+            img {
+                border-radius: 3px 3px 0 0;
+            }
+        }
+    }
+}

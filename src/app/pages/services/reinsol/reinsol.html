@@ -1,0 +1,84 @@
+<head>
+    <title>Grupo Gorev - REINSOL</title>
+</head>
+<div class="container-home">
+    <div class="title-home animate__animated animate__fadeIn animate__slow">
+        <h1>REINSOL</h1>
+    </div>
+</div>
+
+<div class="quienes-somos-container animate__animated animate__fadeIn animate__slow">
+    <div class="video-wrapper">
+        <video preload="metadata" loading="lazy" #videoEl muted (timeupdate)="updateProgress()" (ended)="onEnded()">
+            <source src="video/video-reinsol.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+        </video>
+
+        <!-- Botón de play central -->
+        <button class="custom-play-button" *ngIf="!isPlaying" (click)="togglePlay($event)">
+            <i class="fas fa-play"></i>
+        </button>
+
+        <!-- Controles personalizados -->
+        <div class="controls" *ngIf="isPlaying">
+            <button class="pause-play-btn" (click)="togglePlay($event)">
+                <i class="fas" [ngClass]="isPaused ? 'fa-play' : 'fa-pause'"></i>
+            </button>
+            <div class="time-info">{{ currentTime }} / {{ duration }}</div>
+            <input type="range" class="progress-bar" min="0" [max]="videoDuration" [(ngModel)]="currentTimeValue"
+                (input)="seekVideo($event)" />
+        </div>
+    </div>
+    <div class="texto-container">
+        <h1 class="titulo">REINSOL</h1>
+        <h4 class="subtitulo">— ¿Qué es? </h4>
+        <p class="descripcion">
+            REINSOL es un proyecto jurídico-social desarrollado por Grupo Gorev, orientado a brindar segundas
+            oportunidades a personas que enfrentan limitaciones legales producto de antecedentes judiciales, penales,
+            policiales o registros de denuncias. El objetivo de REINSOL es permitir que estas personas puedan reiniciar
+            su hoja de vida, superar la barrera del estigma legal y reincorporarse plenamente al ámbito laboral,
+            académico y social.
+        </p>
+        <div class="ref-button">
+            <a href="https://wa.me/51918718984?text=Hola,%20necesito%20m%C3%A1s%20informaci%C3%B3n"
+                target="_blank">Solicitar asesoria ahora</a>
+        </div>
+    </div>
+    <div class="logo-flot">
+        <img src="images/reinsol-logo.png" alt="">
+    </div>
+</div>
+
+<section class="publico-dirigido animate__animated animate__fadeIn animate__slow">
+    <div class="publico-dirigido__banner">
+        <h2>¿A quién está dirigido?</h2>
+        <p>
+            A personas naturales mayores de edad con antecedentes que desean reinsertarse a la vida profesional o
+            académica sin limitaciones legales.
+        </p>
+    </div>
+
+    <div class="servicios">
+        <h3 class="servicios__titulo">Servicios principales:</h3>
+        <div class="servicios__grid">
+            <div class="servicio-card">
+                Eliminación legal de antecedentes judiciales, penales y policiales
+            </div>
+            <div class="servicio-card move-card">
+                Eliminación de registros de denuncias fiscales y policiales
+            </div>
+            <div class="servicio-card">
+                Representación en procesos de rehabilitación o conversión de penas
+            </div>
+            <div class="servicio-card ">
+                Regularización de identidad y registros públicos
+            </div>
+            <div class="servicio-card move-card">
+                Asesoría para reinserción laboral y validación de antecedentes
+            </div>
+            <div class="servicio-card">
+                Defensa en procesos abiertos que afectan su historial
+            </div>
+        </div>
+    </div>
+</section>

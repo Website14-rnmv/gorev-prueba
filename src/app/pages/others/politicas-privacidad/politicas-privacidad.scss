@@ -1,0 +1,81 @@
+.container {
+    position: relative;
+    width: 100%;
+    padding: 10% 25%;
+    background-image:
+        linear-gradient(rgba(16, 37, 25, 0.705), rgba(11, 32, 25, 0.801)),
+        url('/images/REINSOL-FONDO.jpg');
+    background-size: cover;
+    /* que la imagen cubra todo */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* no repetir */
+    display: flex;
+    flex-direction: column;
+
+    .logo{
+        img{
+            width: 250px;
+        }
+    }
+
+    .info{
+        border: 2px solid white;
+        padding: 40px;
+
+        .title-info{
+            color: #D9B97E;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+                  letter-spacing: 0.5rem;
+        }
+
+        .text{
+            p{
+                color: white;
+                            font-family: 'Playfair Display', serif;
+            }
+        }
+    }
+ 
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 8% 15%;
+  }
+
+  .container .logo img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 36% 5% 10% 5%;
+    background-attachment: scroll; // mejora en móviles
+
+    .logo img {
+      width: 180px;
+    }
+
+    .info {
+        width: 100%;
+      padding: 20px;
+
+      .title-info {
+        h1{
+        font-size: 20px;
+        letter-spacing: 0.3rem;
+      }
+      }
+
+      .text p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+

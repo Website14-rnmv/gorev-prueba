@@ -1,0 +1,557 @@
+.container-home {
+  display: block;
+  position: relative;
+  top: -30px;
+  width: 100%;
+  height: 50vh;
+  background-image:
+    linear-gradient(rgba(16, 37, 25, 0.705), rgba(11, 32, 25, 0.801)),
+    url('/images/PERSALUD-FONDO.jpg');
+  background-attachment: fixed;
+
+  background-size: cover;
+  /* que la imagen cubra todo */
+  background-position: center;
+  /* centrada */
+  background-repeat: no-repeat;
+  /* no repetir */
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  overflow: hidden;
+  padding: 2% 0;
+
+  .title-home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 65px;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+    }
+  }
+}
+
+
+.quienes-somos-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3% 0%;
+  position: relative;
+
+  .video-wrapper {
+    position: absolute;
+    width: 700px;
+    height: 800px;
+    margin: auto;
+    left: 0;
+
+    video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      box-shadow: none;
+      background-color: black;
+      object-fit: cover;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.281);
+
+    }
+
+    .custom-play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+
+      i.fas {
+        font-size: 24px;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+
+      .pause-play-btn {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .time-info {
+        font-size: 12px;
+        min-width: 70px;
+      }
+
+      .progress-bar {
+        flex: 1;
+        appearance: none;
+        height: 4px;
+        background: #ddd;
+        border-radius: 2px;
+
+        &::-webkit-slider-thumb {
+          appearance: none;
+          width: 10px;
+          height: 10px;
+          background: #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .texto-container {
+    width: 50%;
+    position: absolute;
+    right: 6%;
+    text-align: left;
+
+
+
+    .extra {
+      display: flex;
+      align-items: center;
+
+      .icons {
+        display: flex;
+        gap: 1rem;
+        margin-left: 20px;
+
+        a {
+          width: 35px;
+          height: 35px;
+          color: white;
+          font-size: 1.3rem;
+          transition: color 0.3s ease;
+          background-color: #0b1b14;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+
+
+          &:hover {
+            color: #d5a86a;
+          }
+        }
+      }
+
+      .subtitulo {
+        color: #c2a75c;
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 1px;
+
+      }
+    }
+
+    .titulo {
+      font-size: 4rem;
+      font-weight: 600;
+      color: #3e463d;
+      letter-spacing: 0.3rem;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 10px;
+      margin: 0;
+
+    }
+
+    .descripcion {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .ref-button {
+      width: 100%;
+      margin-top: 40px;
+      text-align: left;
+
+      a {
+        background-color: #d5a86a;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: #ca9953
+        }
+      }
+    }
+  }
+
+  .logo-flot {
+    position: absolute;
+    right: 40px;
+    bottom: -40px;
+    z-index: -1;
+
+    img {
+      width: 350px;
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .quienes-somos-container {
+    height: auto;
+    padding: 2rem 1rem;
+    position: relative;
+
+    .video-wrapper {
+      position: relative;
+      width: 90vw;
+      max-width: 500px;
+      height: 900px;
+      object-fit: contain;
+      left: 0;
+      margin: 0 auto 1.5rem auto;
+
+      video {
+        border-radius: 0;
+      }
+
+      .custom-play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+
+        i.fas {
+          font-size: 16px;
+        }
+      }
+
+      .controls {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+
+        .time-info {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .texto-container {
+      position: relative;
+      width: 40%;
+      right: 50px;
+      text-align: center;
+      margin-top: 1.5rem;
+
+      .extra {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .subtitulo {
+        font-size: 1.2rem;
+      }
+
+      .titulo {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+      }
+
+      .descripcion {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.publico-dirigido {
+
+
+  &__banner {
+    background-color: #0F281E;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #b99b63;
+
+    h2 {
+      color: #b99b63;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1.5px;
+
+    }
+
+    p {
+      color: #ffffff;
+      font-size: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.servicios {
+  background-image:
+    linear-gradient(rgba(16, 37, 25, 0.89), rgba(11, 32, 25, 0.932)),
+    url('/images/PERSALUD-FONDO.jpg');
+  background-attachment: fixed;
+
+  background-size: cover;
+  /* que la imagen cubra todo */
+  background-position: center;
+  /* centrada */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1% 5% 5% 5%;
+  height: 80vh;
+
+  &__titulo {
+    font-size: 1.3rem;
+    color: #d5a86a;
+    transform: translateY(80px);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    justify-items: center;
+  }
+}
+
+.servicio-card {
+  background-color: #d9b97e7e;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.486);
+  text-align: center;
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.4;
+  width: 70%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.move-card {
+  position: relative;
+  top: 100px;
+}
+
+@media (max-width: 768px) {
+  .container-home {
+    flex-direction: column;
+    height: auto;
+    padding: 4% 2%;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    height: 35vh;
+
+    .title-home {
+      h1 {
+        font-size: 1.7rem;
+        letter-spacing: 3px;
+        text-align: center;
+        position: relative;
+        top: 35px;
+      }
+    }
+  }
+
+  .quienes-somos-container {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+    position: relative;
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: auto;
+
+      video {
+        width: 100%;
+        height: 100%;
+        border: none;
+        box-shadow: none;
+        background-color: black;
+        object-fit: cover;
+        border-radius: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.281);
+
+      }
+
+      .custom-play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+
+        i.fas {
+          font-size: 16px;
+        }
+      }
+
+      .controls {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+
+        .time-info {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .texto-container {
+      position: relative;
+      width: 100% !important;
+      right: 0;
+      text-align: center;
+      margin-top: 1.5rem;
+
+      .extra {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .subtitulo {
+        font-size: 1.2rem;
+      }
+
+      .titulo {
+        font-size: 2rem;
+        letter-spacing: 3px;
+      }
+
+      .descripcion {
+        font-size: 0.9rem;
+      }
+
+      .ref-button {
+        width: 100%;
+        text-align: center;
+
+        a {
+          width: 100%;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .publico-dirigido__banner {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .servicios {
+    padding: 6% 4%;
+    height: auto;
+
+    &__titulo {
+      margin-left: 0;
+      align-self: center;
+      text-align: center;
+      font-size: 1.1rem;
+      transform: translateY(0px);
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .servicio-card {
+    width: 90%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .move-card {
+    top: 0;
+  }
+
+  .logo-flot {
+    display: none;
+  }
+}
+
+@media (max-width: 1440px) {
+  .texto-container {
+    width: 45% !important;
+    position: absolute;
+    right: 1% !important;
+    text-align: left;
+  }
+
+  .ref-button {
+    text-align: center !important;
+  }
+}

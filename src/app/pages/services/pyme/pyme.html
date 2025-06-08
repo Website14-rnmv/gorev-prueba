@@ -1,0 +1,82 @@
+<head>
+    <title>Grupo Gorev - PYME</title>
+</head>
+<div class="container-home">
+    <div class="title-home animate__animated animate__fadeIn animate__slow">
+        <h1>PYME</h1>
+    </div>
+</div>
+
+<div class="quienes-somos-container animate__animated animate__fadeIn animate__slow">
+    <div class="video-wrapper">
+        <video preload="metadata" loading="lazy" #videoEl muted (timeupdate)="updateProgress()" (ended)="onEnded()">
+            <source src="video/pyme.MOV" type="video/mp4" />
+            Tu navegador no soporta el video.
+        </video>
+
+        <!-- Botón de play central -->
+        <button class="custom-play-button" *ngIf="!isPlaying" (click)="togglePlay($event)">
+            <i class="fas fa-play"></i>
+        </button>
+
+        <!-- Controles personalizados -->
+        <div class="controls" *ngIf="isPlaying">
+            <button class="pause-play-btn" (click)="togglePlay($event)">
+                <i class="fas" [ngClass]="isPaused ? 'fa-play' : 'fa-pause'"></i>
+            </button>
+            <div class="time-info">{{ currentTime }} / {{ duration }}</div>
+            <input type="range" class="progress-bar" min="0" [max]="videoDuration" [(ngModel)]="currentTimeValue"
+                (input)="seekVideo($event)" />
+        </div>
+    </div>
+    <div class="texto-container animate__animated animate__fadeIn animate__slow">
+        <h1 class="titulo">PYME </h1>
+        <h4 class="subtitulo">— ¿Qué es? </h4>
+        <p class="descripcion">
+            PYME SEGURO es un servicio integral de protección legal y contable que incluye asesoría permanente, defensa
+            ante entidades regulatorias, atención de emergencias y respaldo contable especializado. Su propósito es
+            permitir que los empresarios se concentren en el desarrollo de su negocio, mientras un equipo profesional se
+            encarga de protegerlo frente a riesgos legales y fiscales.
+        </p>
+        <div class="ref-button">
+            <a href="https://wa.me/51918718984?text=Hola,%20necesito%20m%C3%A1s%20informaci%C3%B3n"
+                target="_blank">Solicitar asesoria ahora</a>
+        </div>
+    </div>
+    <div class="logo-flot">
+        <img src="images/pyme-logo.png" alt="">
+    </div>
+</div>
+
+<section class="publico-dirigido animate__animated animate__fadeIn animate__slow">
+    <div class="publico-dirigido__banner">
+        <h2>¿A quién está dirigido?</h2>
+        <p>
+            Está diseñado especialmente para MYPES (Micro y pequeñas empresas), PYMES (Pequeñas y medianas empresas) y empresas en proceso de formalización legal o contable
+        </p>
+    </div>
+
+    <div class="servicios">
+        <h3 class="servicios__titulo">Servicios principales:</h3>
+        <div class="servicios__grid">
+            <div class="servicio-card">
+                Defensa inmediata ante SUNAFIL, SUNAT e INDECOPI.
+            </div>
+            <div class="servicio-card move-card">
+                Asesoría legal y contable permanente para tu empresa.
+            </div>
+            <div class="servicio-card">
+                Contratos, actas y documentos listos para firmar.
+            </div>
+            <div class="servicio-card ">
+                Abogados disponibles 24/7 ante emergencias empresariales.
+            </div>
+            <div class="servicio-card move-card">
+                Revisión contable mensual y alertas tributarias personalizadas
+            </div>
+            <div class="servicio-card">
+                Respaldo Integral para el representante legal y los socios
+            </div>
+        </div>
+    </div>
+</section>

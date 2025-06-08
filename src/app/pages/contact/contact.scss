@@ -1,0 +1,213 @@
+.contacto {
+  height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0.158)),
+    url('/images/contracto-fondo.jpg');
+    background-size: cover;
+  /* que la imagen cubra todo */
+  background-position: top;
+  background-attachment: fixed;
+
+  /* centrada */
+  background-repeat: no-repeat;
+  
+  padding: 4rem 2rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 5%;
+
+  &__container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+  .contacto__container{
+    background-color: #11271e8e;
+    padding: 2%;
+    border-radius: 5px;
+  }
+
+  &__descripcion {
+    flex: 1;
+
+    &>.contacto__titulo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      border-left: 5px solid #D9B97E;
+      padding-left: 0.75rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    &>.contacto__subtitulo {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    &>.contacto__texto {
+      width: 70%;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &>.contacto__item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      i {
+        width: 50px;
+        height: 50px;
+        color: #D9B97E;
+        font-size: 1.2rem;
+        border: 1px solid #D9B97E;
+        padding: 10px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      span {
+        font-size: 0.95rem;
+      }
+    }
+
+    &>.contacto__redes {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 0.75rem;
+      margin-top: 2rem;
+
+      span {
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      a {
+        color: #ffffff;
+        font-size: 1.4rem;
+        transition: color 0.3s ease;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #38483F;
+        border-radius: 50%;
+        text-decoration: none;
+
+        &:hover {
+          color: #D9B97E;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+  background-position: left;
+background-image:
+    linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.671)),
+    url('/images/contracto-fondo.jpg');
+    &__container {
+      width: 100%;
+      gap: 1.5rem;
+    }
+
+    .contacto__container{
+     background-color: transparent;
+    }
+
+    &__descripcion {
+      &>.contacto__titulo {
+        font-size: 1.5rem;
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 2px solid #D9B97E;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+        padding-top: 20px;
+      }
+
+      &>.contacto__subtitulo {
+        font-size: 0.95rem;
+      }
+
+      &>.contacto__texto {
+        width: 100%;
+        font-size: 0.95rem;
+      }
+    }
+
+    &__info {
+      align-items: center;
+
+      &>.contacto__item {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        text-align: left;
+
+        i {
+          font-size: 1rem;
+          width: 40px;
+          height: 40px;
+          padding: 8px;
+        }
+
+        span {
+          font-size: 0.9rem;
+          text-align: center;
+        }
+      }
+
+      &>.contacto__redes {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+
+        span {
+          font-size: 0.9rem;
+          width: 100%;
+        }
+
+        a {
+          font-size: 1.2rem;
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .contacto {
+    height: 110vh;
+  }
+}

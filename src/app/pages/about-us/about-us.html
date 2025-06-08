@@ -1,0 +1,255 @@
+<head>
+    <title>Grupo Gorev - Nosotros</title>
+</head>
+<div class="container-home">
+    <div class="title-home animate__animated animate__fadeIn animate__slow">
+        <h1>Nosotros</h1>
+    </div>
+</div>
+
+<div class="quienes-somos-container animate__animated animate__fadeIn animate__slow">
+    <div class="video-wrapper">
+        <video preload="metadata" loading="lazy" #videoEl muted (timeupdate)="updateProgress()" (ended)="onEnded()">
+            <source src="video/nosotros-video.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+        </video>
+
+        <!-- Botón de play central -->
+        <button class="custom-play-button" *ngIf="!isPlaying" (click)="togglePlay($event)">
+            <i class="fas fa-play"></i>
+        </button>
+
+        <!-- Controles personalizados -->
+        <div class="controls" *ngIf="isPlaying">
+            <button class="pause-play-btn" (click)="togglePlay($event)">
+                <i class="fas" [ngClass]="isPaused ? 'fa-play' : 'fa-pause'"></i>
+            </button>
+            <div class="time-info">{{ currentTime }} / {{ duration }}</div>
+            <input type="range" class="progress-bar" min="0" [max]="videoDuration" [(ngModel)]="currentTimeValue"
+                (input)="seekVideo($event)" />
+        </div>
+    </div>
+    <div class="texto-container">
+        <h4 class="subtitulo">— ¿Quiénes somos?</h4>
+        <h1 class="titulo">GOREV</h1>
+        <p class="descripcion">
+            Grupo Gorev LAT S.A.C. es una firma legal conformada por un equipo de abogados y profesionales
+            especializados en liderar proyectos estratégicos de protección jurídica integral para sectores clave del
+            país.
+        </p>
+        <div class="ref-button">
+            <a href="https://wa.me/51918718984?text=Hola,%20necesito%20m%C3%A1s%20informaci%C3%B3n"
+                target="_blank">Solicitar asesoria ahora</a>
+        </div>
+    </div>
+</div>
+
+<div class="mision-vision-container animate__animated animate__fadeIn animate__slow">
+    <div class="card mision">
+        <div class="icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Misión:</h3>
+        <p>
+            Proporcionar soluciones jurídicas innovadoras, eficaces y personalizadas, a través de proyectos y líneas de
+            defensa legal que protejan la integridad, los derechos y el desarrollo profesional de nuestros clientes. Nos
+            comprometemos a brindar un servicio de alto nivel técnico, humano y ético, que transforme realidades legales
+            con impacto social y estratégico.
+        </p>
+    </div>
+
+    <div class="card vision">
+        <div class="icon"><i class="fas fa-eye"></i></div>
+        <h3>Visión:</h3>
+        <p>
+            Ser la firma líder en defensa legal especializada y proyectos de protección sectorial en el Perú, reconocida
+            por su excelencia, innovación y capacidad de generar confianza, reintegración y seguridad jurídica en
+            quienes no pueden dejar su futuro en manos del azar.
+        </p>
+    </div>
+</div>
+
+
+<div class="estrategias-container animate__animated animate__fadeIn animate__slow">
+    <h2 class="title">
+        Actualmente impulsamos tres líneas estratégicas de protección legal que marcan la diferencia en sectores clave.
+    </h2>
+
+    <!-- Persalud -->
+    <div class="item">
+        <div class="img-box">
+            <img src="images/presalud.png" alt="Persalud">
+        </div>
+        <div class="text-box">
+            <h3>PERSALUD</h3>
+            <p>
+                Sistema de asistencia legal diseñado para médicos, psicólogos y profesionales de la salud, con defensa
+                especializada ante denuncias, auditorías, agresiones, conflictos contractuales y otras contingencias del
+                entorno sanitario.
+            </p>
+        </div>
+    </div>
+
+    <!-- Reinsol -->
+    <div class="item reverse">
+        <div class="img-box">
+            <img src="images/REINSOL.jpg" alt="Reinsol">
+        </div>
+        <div class="text-box">
+            <h3>REINSOL</h3>
+            <p>
+                Proyecto de reinserción legal dirigido a personas con antecedentes judiciales, penales o policiales, que
+                buscan
+                recuperar su hoja de vida profesional y reintegrarse a la sociedad sin restricciones legales ni
+                estigmas.
+            </p>
+        </div>
+    </div>
+
+    <!-- Seg Profe -->
+    <div class="item">
+        <div class="img-box">
+            <img src="images/seguro.png" alt="Seg Profe">
+        </div>
+        <div class="text-box">
+            <h3>SEG PROFE</h3>
+            <p>
+                Programa de respaldo jurídico para docentes y personal educativo, con cobertura en procesos
+                administrativos,
+                disciplinarios, penales, civiles y conflictos laborales derivados del ejercicio docente.
+            </p>
+        </div>
+    </div>
+    <!-- PYME SEGURA -->
+    <div class="item reverse">
+        <div class="img-box">
+            <img src="images/pyme-segura-banner.png" alt="PYME SEGURA">
+        </div>
+        <div class="text-box">
+            <h3>PYME SEGURA</h3>
+            <p>
+                El proyecto consiste en el desarrollo y ofrecimiento de un servicio especializado de seguro legal para
+                MYPES, PYMES y empresas en proceso de formalización. Este seguro brinda una cobertura completa en
+                materia legal, contable y tributaria, pensada para garantizar el respaldo y crecimiento sostenible de
+                las empresas.
+
+            </p>
+        </div>
+    </div>
+
+    <h2 class="title">
+        Cada línea incluye servicios de consultoría, asesoría preventiva, defensa legal, representación integral y
+        seguimiento continuo, garantizando protección 24/7 y estrategias adaptadas a cada realidad. </h2>
+</div>
+
+<div class="team-section animate__animated animate__fadeIn animate__slow">
+    <h2 class="section-title">Nuestro Equipo</h2>
+    <div class="team-grid">
+        <div class="member-card">
+            <img src="images/personal/andre-gomez.jpg" alt="Andrés Gómez">
+            <div class="info-abo">
+                <h3>Andrés Gómez</h3>
+                <p>Gerente General</p>
+                <a target="_blank" href="https://www.linkedin.com/in/andr%C3%A9s-g%C3%B3mez-revilla-9341a829b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/mairy-salas.jpg" alt="Maryi Salas">
+            <div class="info-abo">
+                <h3>Maryi Salas</h3>
+                <p>Gerente Financiera</p>
+                <a href="https://www.linkedin.com/in/maryi-salas-torres-/" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/sujei-perez.jpg" alt="Sujei Pérez">
+            <div class="info-abo">
+                <h3>Sujei Pérez</h3>
+                <p>Abogada Principal</p>
+                <a href="#" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/raul-coronel.jpg" alt="Raúl Coronel">
+            <div class="info-abo">
+                <h3>Raúl Coronel</h3>
+                <p>Abogado</p>
+                <a href="https://www.linkedin.com/in/raul-coronel-huertas-0aa271370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/bremez-munos.jpg" alt="Bremer Muñoz">
+            <div class="info-abo">
+                <h3>Bremer Muñoz</h3>
+                <p>Abogado</p>
+                <a href="https://www.linkedin.com/in/yaner-bremer-mu%C3%B1oz-abanto-531210370/" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/valeria-padilla.jpg" alt="Valeria Padilla">
+            <div class="info-abo">
+                <h3>Valeria Padilla</h3>
+                <p>Abogada</p>
+                <a href="https://www.linkedin.com/in/valeria-padilla-verde-01b1aa134?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/angie-timoteo.jpg" alt="Anghy Timoteo">
+            <div class="info-abo">
+                <h3>Anghy Timoteo</h3>
+                <p>Directora PERSALUD</p>
+                <a href="https://www.linkedin.com/in/anghy-timoteo-sanchez-a591b4353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/ronald.jpg" alt="onald Diaz">
+            <div class="info-abo">
+                <h3>Ronald Diaz</h3>
+                <p>Abogado</p>
+                <a href="#" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+
+        <div class="member-card">
+            <img src="images/personal/irvin.jpg" alt="Irving Guerrero">
+            <div class="info-abo">
+                <h3>Irving Guerrero</h3>
+                <p>Director SEGPROFE</p>
+                <a href="#" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/iveth.jpg" alt="Iveth Huamani">
+            <div class="info-abo">
+                <h3>Iveth Huamani</h3>
+                <p>Asistente Legal</p>
+                <a href="https://pe.linkedin.com/in/iveth-huamani-759123370" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/jukio.jpg" alt="Yukio Kuwae">
+            <div class="info-abo">
+                <h3>Yukio Kuwae</h3>
+                <p>Gestor Procesal</p>
+                <a href="Linkedin.com/in/yukiokuwae" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="member-card">
+            <img src="images/personal/noelia.jpg" alt="Noelia Guerra">
+            <div class="info-abo">
+                <h3>Noelia Guerra</h3>
+                <p>Asistente Legal</p>
+                <a href="https://pe.linkedin.com/in/jovelin-noelia-guerra-huamani-883a98366" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

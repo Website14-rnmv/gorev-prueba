@@ -1,0 +1,91 @@
+<head>
+    <title>Grupo Gorev - SEGPROFE</title>
+</head>
+<div class="container-home">
+    <div class="title-home animate__animated animate__fadeIn animate__slow">
+        <h1>SEGPROFE</h1>
+    </div>
+</div>
+
+<div class="quienes-somos-container animate__animated animate__fadeIn animate__slow">
+    <div class="video-wrapper">
+        <video preload="metadata" loading="lazy" #videoEl muted (timeupdate)="updateProgress()" (ended)="onEnded()">
+            <source src="video/video-segprofe.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+        </video>
+
+        <!-- Botón de play central -->
+        <button class="custom-play-button" *ngIf="!isPlaying" (click)="togglePlay($event)">
+            <i class="fas fa-play"></i>
+        </button>
+
+        <!-- Controles personalizados -->
+        <div class="controls" *ngIf="isPlaying">
+            <button class="pause-play-btn" (click)="togglePlay($event)">
+                <i class="fas" [ngClass]="isPaused ? 'fa-play' : 'fa-pause'"></i>
+            </button>
+            <div class="time-info">{{ currentTime }} / {{ duration }}</div>
+            <input type="range" class="progress-bar" min="0" [max]="videoDuration" [(ngModel)]="currentTimeValue"
+                (input)="seekVideo($event)" />
+        </div>
+    </div>
+    <div class="texto-container">
+        <h1 class="titulo">SEGPROFE</h1>
+         <div class="extra">
+            <h4 class="subtitulo">— ¿Qué es? </h4>
+            <div class="icons">
+                <a target="_blank" href="https://www.instagram.com/seguro.peprofe?igsh=ZDkzZWcyOXJxZzlp"><i
+                        class="fab fa-instagram"></i></a>
+                <a target="_blank" href="https://www.tiktok.com/@firmalegalsegurop"><i
+                        class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <p class="descripcion">
+            SEGURO PROFE es una solución jurídica especializada para maestros, directores y personal del sector
+            educativo. Ofrece protección integral frente a situaciones que comprometan su labor profesional o su entorno
+            personal, brindando un respaldo legal completo en procesos administrativos, disciplinarios, penales, civiles
+            y laborales.
+        </p>
+        <div class="ref-button">
+            <a href="https://wa.me/51955128548?text=Hola,%20necesito%20m%C3%A1s%20informaci%C3%B3n"
+                target="_blank">Solicitar asesoria ahora</a>
+        </div>
+    </div>
+    <div class="logo-flot">
+        <img src="images/segprofe-logo.png" alt="">
+    </div>
+</div>
+
+<section class="publico-dirigido animate__animated animate__fadeIn animate__slow">
+    <div class="publico-dirigido__banner">
+        <h2>¿A quién está dirigido?</h2>
+        <p>
+            A docentes, auxiliares, directivos, psicólogos escolares y personal técnico pedagógico de instituciones
+            educativas públicas o privadas.
+        </p>
+    </div>
+
+    <div class="servicios">
+        <h3 class="servicios__titulo">Servicios principales:</h3>
+        <div class="servicios__grid">
+            <div class="servicio-card">
+                Defensa en procesos administrativos, disciplinarios y sancionadores
+            </div>
+            <div class="servicio-card move-card">
+                Acompañamiento en denuncias por violencia escolar o conflictos con padres de familia
+            </div>
+            <div class="servicio-card">
+                Representación en juicios por difamación, acoso o maltrato
+            </div>
+            <div class="servicio-card ">
+                Defensa ante procesos civiles y penales derivados del ejercicio docente
+            </div>
+            <div class="servicio-card move-card">
+                Conflictos laborales o desvinculaciones arbitrarias
+            </div>
+            <div class="servicio-card">
+                Asesoría preventiva y capacitación jurídica básica
+            </div>
+        </div>
+    </div>
+</section>

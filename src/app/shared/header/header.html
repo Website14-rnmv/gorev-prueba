@@ -1,0 +1,35 @@
+<header class="header animate__animated animate__fadeIn animate__slow">
+  <div class="container">
+    <div class="bar-fix">
+      <div class="logo">
+        <a href="/">
+          <img class="logo-img" src="images/LogoGorev.png" alt="Logo">
+        </a>
+      </div>
+
+      <button class="menu-toggle" (click)="toggleMenu()">
+        {{ menuAbierto ? '✖' : '☰' }}
+      </button>
+    </div>
+
+    <nav [class.active]="menuAbierto">
+      <a (click)="redirectToPage('/')">Inicio</a>
+      <a (click)="redirectToPage('/nosotros')">Nosotros</a>
+      <!-- ...existing code... -->
+      <div class="dropdown" [class.open]="dropdownAbierto">
+        <a class="dropdown-toggle" (click)="toggleDropdown()">
+          <i class="icon-desplegable fas fa-chevron-down"></i> Servicios
+        </a>
+        <div class="dropdown-menu">
+          <a (click)="redirectToPage('/servicios/reinsol')">REINSOL</a>
+          <a (click)="redirectToPage('/servicios/persalud')">PERSALUD</a>
+          <a (click)="redirectToPage('/servicios/segprofe')">SEGPROFE</a>
+          <a (click)="redirectToPage('/servicios/pyme')">PYME</a>
+        </div>
+      </div>
+      <!-- ...existing code... -->
+
+      <a (click)="redirectToPage('/contacto')">Contacto</a>
+    </nav>
+  </div>
+</header>
